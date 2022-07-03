@@ -3,6 +3,7 @@
 //! This library will construct this header, copied from the Linux kernel:
 //!
 //! ```c
+//! // Note that this code snippet is licensed GPL-2.0, matching include/linux/swap.h in the Linux Kernel.
 //! union swap_header {
 //!     struct {
 //!         char reserved[PAGE_SIZE - 10];
