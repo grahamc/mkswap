@@ -170,7 +170,7 @@ pub enum Error {
     SizeDetection(std::io::Error),
 
     /// The specified label is too long: it must be at most MAXIMUM_LABEL_BYTES bytes long.
-    #[error("he specified label is too long: it must be at most MAXIMUM_LABEL_BYTES bytes long")]
+    #[error("The specified label is too long: it must be at most MAXIMUM_LABEL_BYTES bytes long")]
     LabelTooLong,
 
     /// The swap area must be at least MINIMUM_PAGES large. The attached u32 is the
