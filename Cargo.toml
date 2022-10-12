@@ -1,6 +1,6 @@
 [package]
 name = "mkswap"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Create a swap file or device in pure Rust."
 license = "MIT"
