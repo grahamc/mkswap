@@ -159,22 +159,27 @@ impl SwapWriter {
 }
 
 /// General errors that can occur while configuring and writing a swap space.
-#[derive(Debug)]
+#[derive(Debug, thiserror::Error)]
 pub enum Error {
     /// Your page size can't fit in to a u64.
+    #[error("Your page size can't fit in to a u64")]
     GiganticPageSize(std::num::TryFromIntError),
 
     /// An unspecified IO error occured while trying to detect the size of the swap space.
+    #[error("An unspecified IO error occured while trying to detect the size of the swap space")]
     SizeDetection(std::io::Error),
 
     /// The specified label is too long: it must be at most MAXIMUM_LABEL_BYTES bytes long.
+    #[error("he specified label is too long: it must be at most MAXIMUM_LABEL_BYTES bytes long")]
     LabelTooLong,
 
     /// The swap area must be at least MINIMUM_PAGES large. The attached u32 is the
     /// number of pages that were attempted.
+    #[error("The swap area must be at least MINIMUM_PAGES large. The attached u32 is the number of pages that were attempted")]
     TooFewPages(u32),
 
     /// An error occurred while writing the swap space header to the area.
+    #[error("An error occurred while writing the swap space header to the area")]
     WriteHeader(std::io::Error),
 }
 
